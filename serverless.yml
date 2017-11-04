@@ -1,0 +1,12 @@
+service: scrap-arxiv-information
+provider:
+  name: aws
+  runtime: nodejs6.10
+
+functions:
+  getArxivInformation:
+    handler: handler.getArxivInformation
+    events:
+      - http:
+          path: arxiv
+          method: get
